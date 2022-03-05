@@ -1,0 +1,146 @@
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Yashwanth Lal/Desktop/git-katas-master/basic-revert/exercise/.git/
+[master (root-commit) 30dfc35] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: LF will be replaced by CRLF in credentials.txt.
+The file will have its original line endings in your working directory
+[master 5bb18c4] Add credentials to repository
+ 1 file changed, 1 insertion(+)
+ create mode 100644 credentials.txt
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[master 8dad10b] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[master 987368e] Overwrite greeting.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git log --decorate --oneline
+987368e (HEAD -> master) Overwrite greeting.txt
+8dad10b Add content to greeting.txt
+5bb18c4 Add credentials to repository
+30dfc35 Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ cat greeting.txt
+This should have been appended to the original content, rather than overwriting it.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add a Signed-off-by trailer
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git revert commit hash
+fatal: bad revision 'commit'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ ^C
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git revert 987368e
+[master 25901bd] Revert "Overwrite greeting.txt"
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git log --decorate --oneline
+25901bd (HEAD -> master) Revert "Overwrite greeting.txt"
+987368e Overwrite greeting.txt
+8dad10b Add content to greeting.txt
+5bb18c4 Add credentials to repository
+30dfc35 Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ cat greeting.txt
+Original file content
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ ls
+credentials.txt  greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ cat credentials.txt
+supersecretpassword
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ cat greeting.txt
+Original file content
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git log --decorate --oneline
+25901bd (HEAD -> master) Revert "Overwrite greeting.txt"
+987368e Overwrite greeting.txt
+8dad10b Add content to greeting.txt
+5bb18c4 Add credentials to repository
+30dfc35 Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git revert ^C
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git revert 25901bd
+[master 4ca395b] Revert "Revert "Overwrite greeting.txt""
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git log --decorate --oneline
+4ca395b (HEAD -> master) Revert "Revert "Overwrite greeting.txt""
+25901bd Revert "Overwrite greeting.txt"
+987368e Overwrite greeting.txt
+8dad10b Add content to greeting.txt
+5bb18c4 Add credentials to repository
+30dfc35 Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ ls
+credentials.txt  greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$ git show 25901bd
+commit 25901bde5e4fbedf94dac9fced3e07cfa9fd69e3
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:37:11 2022 +0530
+
+    Revert "Overwrite greeting.txt"
+
+    This reverts commit 987368eeaeac5d1b209bc353afc31850cbb96a29.
+
+diff --git a/greeting.txt b/greeting.txt
+index 8a8069f..2bdd920 100644
+--- a/greeting.txt
++++ b/greeting.txt
+@@ -1 +1 @@
+-This should have been appended to the original content, rather than overwriting it.
++Original file content
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-revert/exercise (master)
+$

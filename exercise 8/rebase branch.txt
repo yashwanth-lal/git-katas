@@ -1,0 +1,164 @@
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Yashwanth Lal/Desktop/git-katas-master/rebase-branch/exercise/.git/
+[master (root-commit) b47b41c] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[master 74152d7] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+Switched to a new branch 'uppercase'
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[uppercase c759592] Change greeting to uppercase
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Switched to branch 'master'
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+[master 251bf96] Add readme
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (master)
+$ git branch
+* master
+  uppercase
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (master)
+$ git log
+commit 251bf96cfdbc135ff02d263be901a3c387b434da (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:06 2022 +0530
+
+    Add readme
+
+commit 74152d7f98acedb8aad1efb371de534e79d93b3b
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:03 2022 +0530
+
+    Add content to greeting.txt
+
+commit b47b41c0172add87847c010f762957a085b3f66e
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:02 2022 +0530
+
+    Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (master)
+$ git switch uppercase
+Switched to branch 'uppercase'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (uppercase)
+$ git log
+commit c7595921c9c56d38838c1c7133d79a15dbe04c5b (HEAD -> uppercase)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:05 2022 +0530
+
+    Change greeting to uppercase
+
+commit 74152d7f98acedb8aad1efb371de534e79d93b3b
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:03 2022 +0530
+
+    Add content to greeting.txt
+
+commit b47b41c0172add87847c010f762957a085b3f66e
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:02 2022 +0530
+
+    Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (uppercase)
+$ git rebase master
+Successfully rebased and updated refs/heads/uppercase.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (uppercase)
+$ git log
+commit 2a9c8279b498531cf3429daacc5af7de5e4d8b71 (HEAD -> uppercase)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:05 2022 +0530
+
+    Change greeting to uppercase
+
+commit 251bf96cfdbc135ff02d263be901a3c387b434da (master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:06 2022 +0530
+
+    Add readme
+
+commit 74152d7f98acedb8aad1efb371de534e79d93b3b
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:03 2022 +0530
+
+    Add content to greeting.txt
+
+commit b47b41c0172add87847c010f762957a085b3f66e
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:02 2022 +0530
+
+    Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (uppercase)
+$ git log --oneline --graph
+* 2a9c827 (HEAD -> uppercase) Change greeting to uppercase
+* 251bf96 (master) Add readme
+* 74152d7 Add content to greeting.txt
+* b47b41c Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (uppercase)
+$ gitblog --oneline --graph --all
+bash: gitblog: command not found
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (uppercase)
+$ git log --oneline --graph --all
+* 2a9c827 (HEAD -> uppercase) Change greeting to uppercase
+* 251bf96 (master) Add readme
+* 74152d7 Add content to greeting.txt
+* b47b41c Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (uppercase)
+$ git switch master
+Switched to branch 'master'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (master)
+$ git merge uppercase
+Updating 251bf96..2a9c827
+Fast-forward
+ greeting.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (master)
+$ git log --oneline --graph --all
+* 2a9c827 (HEAD -> master, uppercase) Change greeting to uppercase
+* 251bf96 Add readme
+* 74152d7 Add content to greeting.txt
+* b47b41c Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/rebase-branch/exercise (master)
+$ git log
+commit 2a9c8279b498531cf3429daacc5af7de5e4d8b71 (HEAD -> master, uppercase)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:05 2022 +0530
+
+    Change greeting to uppercase
+
+commit 251bf96cfdbc135ff02d263be901a3c387b434da
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:06 2022 +0530
+
+    Add readme
+
+commit 74152d7f98acedb8aad1efb371de534e79d93b3b
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:03 2022 +0530
+
+    Add content to greeting.txt
+
+commit b47b41c0172add87847c010f762957a085b3f66e
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 16:29:02 2022 +0530
+
+    Add file greeting.txt
+:

@@ -1,0 +1,159 @@
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching
+$
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching
+$ ^C
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching
+$
+source setup.sh
+Initialized empty Git repository in C:/Users/Yashwanth Lal/Desktop/git-katas-master/basic-branching/exercise/.git/
+warning: LF will be replaced by CRLF in dummy.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) bbc07cf] dummy commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dummy.txt
+Switched to a new branch 'second-branch'
+Switched to branch 'master'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git branch
+* master
+  second-branch
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git branch mybranch
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git branch
+* master
+  mybranch
+  second-branch
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git switch master
+Switched to branch 'master'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git checkout mybranch
+Switched to branch 'mybranch'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ touch file1.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git add file1.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git status
+On branch mybranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file1.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git commit -m "commited file1.txt"
+[mybranch bd5f8f9] commited file1.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git log --oneline --graph
+* bd5f8f9 (HEAD -> mybranch) commited file1.txt
+* bbc07cf (second-branch, master) dummy commit
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git switch master
+Switched to branch 'master'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git log --oneline --graph
+* bbc07cf (HEAD -> master, second-branch) dummy commit
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ touch file2.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git add file2.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git commit -m "commited file2.txt"
+[master f962156] commited file2.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git log --oneline --graph -all
+error: switch `l' expects a numerical value
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git log
+commit f96215693f88426e270bec5e6a25a121a4ffa215 (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 12:47:26 2022 +0530
+
+    commited file2.txt
+
+commit bbc07cf77c02a925425e991bdba4946c80dcde49 (second-branch)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 12:41:25 2022 +0530
+
+    dummy commit
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git log --oneline --graph --all
+* f962156 (HEAD -> master) commited file2.txt
+| * bd5f8f9 (mybranch) commited file1.txt
+|/
+* bbc07cf (second-branch) dummy commit
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git switch master
+Switched to branch 'master'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git diff
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$ git diff mybranch master
+diff --git a/file1.txt b/file2.txt
+similarity index 100%
+rename from file1.txt
+rename to file2.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-branching/exercise (mybranch)
+$

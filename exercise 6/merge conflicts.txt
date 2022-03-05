@@ -1,0 +1,247 @@
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Yashwanth Lal/Desktop/git-katas-master/merge-conflict/exercise/.git/
+[master (root-commit) 402248c] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[master 4747c7f] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+Switched to a new branch 'merge-conflict-branch1'
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[merge-conflict-branch1 40bbd62] add relevant fact
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+Switched to branch 'master'
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 83faccd] add indispensable truth!
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git merge merge-conflict-branch1
+Auto-merging file.txt
+CONFLICT (add/add): Merge conflict in file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master|MERGING)
+$ git commit -m "commited after fixed conflict"
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master|MERGING)
+$ git merge --abort
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git commit -m "commited after fixing conflicts"
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git log
+commit 83faccdb5cc34e896375b5df69c60275649efb6d (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 15:27:17 2022 +0530
+
+    add indispensable truth!
+
+commit 4747c7fc301a8c85c60a8166723b95686cd93d6d
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 15:27:16 2022 +0530
+
+    Add content to greeting.txt
+
+commit 402248cfd5b02b4c0dc9b2704fdc4e36efbe5636
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 15:27:16 2022 +0530
+
+    Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git merge merge-conflict-branch1
+Auto-merging file.txt
+CONFLICT (add/add): Merge conflict in file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master|MERGING)
+$ git merge --abort
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git add file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git merge merge-conflict-branch1
+Auto-merging file.txt
+CONFLICT (add/add): Merge conflict in file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master|MERGING)
+$ git merge --abort
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git add file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git commit -m "conflict fixed"
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git merge merge-conflict-branch1
+Auto-merging file.txt
+CONFLICT (add/add): Merge conflict in file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master|MERGING)
+$ git log
+commit 83faccdb5cc34e896375b5df69c60275649efb6d (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 15:27:17 2022 +0530
+
+    add indispensable truth!
+
+commit 4747c7fc301a8c85c60a8166723b95686cd93d6d
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 15:27:16 2022 +0530
+
+    Add content to greeting.txt
+
+commit 402248cfd5b02b4c0dc9b2704fdc4e36efbe5636
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 15:27:16 2022 +0530
+
+    Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master|MERGING)
+$ git merge --abort
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ cat file.txt
+This is an indispensable truth!
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git log
+commit 83faccdb5cc34e896375b5df69c60275649efb6d (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 15:27:17 2022 +0530
+
+    add indispensable truth!
+
+commit 4747c7fc301a8c85c60a8166723b95686cd93d6d
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 15:27:16 2022 +0530
+
+    Add content to greeting.txt
+
+commit 402248cfd5b02b4c0dc9b2704fdc4e36efbe5636
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 15:27:16 2022 +0530
+
+    Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git commit -m "fixed"
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git reset --hard HEAD~1
+HEAD is now at 4747c7f Add content to greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git merge merge-conflict-branch1
+Updating 4747c7f..40bbd62
+Fast-forward
+ file.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ ^C
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$ git log --oneline --graph
+* 40bbd62 (HEAD -> master, merge-conflict-branch1) add relevant fact
+* 4747c7f Add content to greeting.txt
+* 402248c Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/merge-conflict/exercise (master)
+$

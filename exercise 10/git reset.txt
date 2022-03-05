@@ -1,0 +1,273 @@
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Yashwanth Lal/Desktop/git-katas-master/reset/exercise/.git/
+warning: LF will be replaced by CRLF in 1.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) d059fb9] 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 1.txt
+warning: LF will be replaced by CRLF in 2.txt.
+The file will have its original line endings in your working directory
+[master 1c7ea43] 2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 2.txt
+warning: LF will be replaced by CRLF in 3.txt.
+The file will have its original line endings in your working directory
+[master 591510a] 3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 3.txt
+warning: LF will be replaced by CRLF in 4.txt.
+The file will have its original line endings in your working directory
+[master cf55aea] 4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 4.txt
+warning: LF will be replaced by CRLF in 5.txt.
+The file will have its original line endings in your working directory
+[master 1497526] 5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 5.txt
+warning: LF will be replaced by CRLF in 6.txt.
+The file will have its original line endings in your working directory
+[master 9b669f8] 6
+ 1 file changed, 1 insertion(+)
+ create mode 100644 6.txt
+warning: LF will be replaced by CRLF in 7.txt.
+The file will have its original line endings in your working directory
+[master c52ed30] 7
+ 1 file changed, 1 insertion(+)
+ create mode 100644 7.txt
+warning: LF will be replaced by CRLF in 8.txt.
+The file will have its original line endings in your working directory
+[master 179fee0] 8
+ 1 file changed, 1 insertion(+)
+ create mode 100644 8.txt
+warning: LF will be replaced by CRLF in 9.txt.
+The file will have its original line endings in your working directory
+[master 5830e66] 9
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9.txt
+warning: LF will be replaced by CRLF in 10.txt.
+The file will have its original line endings in your working directory
+[master 54bf56c] 10
+ 1 file changed, 1 insertion(+)
+ create mode 100644 10.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git branc
+git: 'branc' is not a git command. See 'git --help'.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git branch
+* master
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git log
+commit 54bf56cc436b1ee499b41f35f582249be7fa7fea (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:12 2022 +0530
+
+    10
+
+commit 5830e66a4f25cdf9907c0fd6c005d8f386493734
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:12 2022 +0530
+
+    9
+
+commit 179fee0fdc1851eb5f90289d3eb09faaae5f8181
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:12 2022 +0530
+
+    8
+
+commit c52ed30f1fb4cfa2eea9492a5533face083dfbe4
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    7
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git reset --soft HEAD~1
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   10.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git log
+commit 5830e66a4f25cdf9907c0fd6c005d8f386493734 (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:12 2022 +0530
+
+    9
+
+commit 179fee0fdc1851eb5f90289d3eb09faaae5f8181
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:12 2022 +0530
+
+    8
+
+commit c52ed30f1fb4cfa2eea9492a5533face083dfbe4
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    7
+
+commit 9b669f846603f566937737945be22e56f3461861
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    6
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git reset --mixed HEAD~1
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        10.txt
+        9.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git log
+commit 179fee0fdc1851eb5f90289d3eb09faaae5f8181 (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:12 2022 +0530
+
+    8
+
+commit c52ed30f1fb4cfa2eea9492a5533face083dfbe4
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    7
+
+commit 9b669f846603f566937737945be22e56f3461861
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    6
+
+commit 1497526e24c50d8fa758cf3a4ab0e55c172b3394
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    5
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git reset --hard HEAD~1
+HEAD is now at c52ed30 7
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        10.txt
+        9.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git log
+commit c52ed30f1fb4cfa2eea9492a5533face083dfbe4 (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    7
+
+commit 9b669f846603f566937737945be22e56f3461861
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    6
+
+commit 1497526e24c50d8fa758cf3a4ab0e55c172b3394
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    5
+
+commit cf55aea38480ed99e2d00be107a9156f43d293ff
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:10 2022 +0530
+
+    4
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git revert HEAD~1
+[master a454864] Revert "6"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 6.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        10.txt
+        9.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git log
+commit a4548642aa7b5fc220cf4e4d0064885e2cd1a260 (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 18:18:02 2022 +0530
+
+    Revert "6"
+
+    This reverts commit 9b669f846603f566937737945be22e56f3461861.
+
+commit c52ed30f1fb4cfa2eea9492a5533face083dfbe4
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    7
+
+commit 9b669f846603f566937737945be22e56f3461861
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+    6
+
+commit 1497526e24c50d8fa758cf3a4ab0e55c172b3394
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 17:57:11 2022 +0530
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git log --decorate --oneline
+a454864 (HEAD -> master) Revert "6"
+c52ed30 7
+9b669f8 6
+1497526 5
+cf55aea 4
+591510a 3
+1c7ea43 2
+d059fb9 1
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ ls
+1.txt  10.txt  2.txt  3.txt  4.txt  5.txt  7.txt  9.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$ git branch
+* master
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/reset/exercise (master)
+$

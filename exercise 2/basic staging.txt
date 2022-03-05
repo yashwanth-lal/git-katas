@@ -1,0 +1,151 @@
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Yashwanth Lal/Desktop/git-katas-master/basic-staging/exercise/.git/
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) c2dc655] 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ echo 2 > file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git diff
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+diff --git a/file.txt b/file.txt
+index d00491f..0cfbf08 100644
+--- a/file.txt
++++ b/file.txt
+@@ -1 +1 @@
+-1
++2
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git diff --staged
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git add file.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git diff
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git diff --staged
+diff --git a/file.txt b/file.txt
+index d00491f..0cfbf08 100644
+--- a/file.txt
++++ b/file.txt
+@@ -1 +1 @@
+-1
++2
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ echo changed > file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git restore --staged file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git add file.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ gid commit -m "unstaged and commiting again"
+bash: gid: command not found
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git log
+commit c2dc655fbcf922a2be79bcbff6395b6433f5c0fe (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 11:53:13 2022 +0530
+
+    1
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ echo 4 > file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git restore file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git restore file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git restore file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-staging/exercise (master)
+$

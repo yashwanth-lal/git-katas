@@ -1,0 +1,176 @@
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Yashwanth Lal/Desktop/git-katas-master/basic-cleaning/exercise/.git/
+warning: LF will be replaced by CRLF in README.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/myapp.c.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/myapp.h.
+The file will have its original line endings in your working directory
+[master (root-commit) 3b95fe6] C code for my app
+ 3 files changed, 3 insertions(+)
+ create mode 100644 README.txt
+ create mode 100644 src/myapp.c
+ create mode 100644 src/myapp.h
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ ls -R
+.:
+README.txt  README.txt~  obj/  src/
+
+./obj:
+a.out  myapp.o  mylib.a  mylib.o
+
+./src:
+myapp.c  myapp.c~  myapp.h  mylib.c  oldfile.c~
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git help ls -R
+error: unknown switch `R'
+usage: git help [-a|--all] [--[no-]verbose]]
+                [[-i|--info] [-m|--man] [-w|--web]] [<command>]
+   or: git help [-g|--guides]
+   or: git help [-c|--config]
+
+    -a, --all             print all available commands
+    -m, --man             show man page
+    -w, --web             show manual in web browser
+    -i, --info            show info page
+    -v, --verbose         print command description
+    -g, --guides          print list of useful guides
+    -c, --config          print all configuration variable names
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git help ls
+fatal: 'C:/Program Files/Git/mingw64/share/doc/git-doc/gitls.html': documentation file not found.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git help --ls
+error: unknown option `ls'
+usage: git help [-a|--all] [--[no-]verbose]]
+                [[-i|--info] [-m|--man] [-w|--web]] [<command>]
+   or: git help [-g|--guides]
+   or: git help [-c|--config]
+
+    -a, --all             print all available commands
+    -m, --man             show man page
+    -w, --web             show manual in web browser
+    -i, --info            show info page
+    -v, --verbose         print command description
+    -g, --guides          print list of useful guides
+    -c, --config          print all configuration variable names
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git ls --help
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+        lfs
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git --ls help
+unknown option: --ls
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git help ls
+fatal: 'C:/Program Files/Git/mingw64/share/doc/git-doc/gitls.html': documentation file not found.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git ls --help
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+        lfs
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ ls
+README.txt  README.txt~  obj/  src/
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ ls -r
+src/  obj/  README.txt~  README.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ ls -R
+.:
+README.txt  README.txt~  obj/  src/
+
+./obj:
+a.out  myapp.o  mylib.a  mylib.o
+
+./src:
+myapp.c  myapp.c~  myapp.h  mylib.c  oldfile.c~
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git clean -n
+Would remove README.txt~
+Would remove src/myapp.c~
+Would remove src/mylib.c
+Would remove src/oldfile.c~
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git add src/mylib.c
+warning: LF will be replaced by CRLF in src/mylib.c.
+The file will have its original line endings in your working directory
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   src/mylib.c
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.txt~
+        obj/
+        src/myapp.c~
+        src/oldfile.c~
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git clean -n
+Would remove README.txt~
+Would remove src/myapp.c~
+Would remove src/oldfile.c~
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ gir clean -n -d
+bash: gir: command not found
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git clean -n -d
+Would remove README.txt~
+Would remove obj/
+Would remove src/myapp.c~
+Would remove src/oldfile.c~
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git clean -f -d
+Removing README.txt~
+Removing obj/
+Removing src/myapp.c~
+Removing src/oldfile.c~
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   src/mylib.c
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$ git clean -n
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/basic-cleaning/exercise (master)
+$

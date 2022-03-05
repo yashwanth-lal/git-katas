@@ -1,0 +1,244 @@
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Yashwanth Lal/Desktop/git-katas-master/ff-merge/exercise/.git/
+[master (root-commit) da729e3] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[master 21dbced] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git branch feature/uppercase
+g
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git branch
+  feature/uppercase
+* master
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ echo HELLO > greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ cat greeting.txt
+HELLO
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git branch
+  feature/uppercase
+* master
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git log --oneline --graph --all
+* 21dbced (HEAD -> master, feature/uppercase) Add content to greeting.txt
+* da729e3 Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git log
+commit 21dbceddcf0ff0a467cba747446d3e648547e70e (HEAD -> master, feature/uppercase)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 13:13:28 2022 +0530
+
+    Add content to greeting.txt
+
+commit da729e359d9baee4c0c5e04de84611acdabd90ba
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 13:13:28 2022 +0530
+
+    Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git switch feature/uppercase
+Switched to branch 'feature/uppercase'
+M       greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git status
+On branch feature/uppercase
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   greeting.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ cat greeting.txt
+HELLO
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git add greeting.txt
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git branch
+* feature/uppercase
+  master
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git log --oneline --graph --all
+* 21dbced (HEAD -> feature/uppercase, master) Add content to greeting.txt
+* da729e3 Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git status
+On branch feature/uppercase
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   greeting.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git commit -m "commited after changing into upper case"
+[feature/uppercase acf0721] commited after changing into upper case
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git status
+On branch feature/uppercase
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git log
+commit acf072160d9da846c00739674d78ca88baf91cf6 (HEAD -> feature/uppercase)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 13:20:25 2022 +0530
+
+    commited after changing into upper case
+
+commit 21dbceddcf0ff0a467cba747446d3e648547e70e (master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 13:13:28 2022 +0530
+
+    Add content to greeting.txt
+
+commit da729e359d9baee4c0c5e04de84611acdabd90ba
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 13:13:28 2022 +0530
+
+    Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git log --oneline --graph --all
+* acf0721 (HEAD -> feature/uppercase) commited after changing into upper case
+* 21dbced (master) Add content to greeting.txt
+* da729e3 Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git switch master
+Switched to branch 'master'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ cat greeting.txt
+hello
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git diff
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git diff master feature/uppercase
+diff --git a/greeting.txt b/greeting.txt
+index ce01362..e427984 100644
+--- a/greeting.txt
++++ b/greeting.txt
+@@ -1 +1 @@
+-hello
++HELLO
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git diff feature/uppercase  master
+diff --git a/greeting.txt b/greeting.txt
+index e427984..ce01362 100644
+--- a/greeting.txt
++++ b/greeting.txt
+@@ -1 +1 @@
+-HELLO
++hello
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git merge feature/uppercase
+Updating 21dbced..acf0721
+Fast-forward
+ greeting.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ cat greeting.txt
+HELLO
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git branch
+  feature/uppercase
+* master
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git checkout -b dummy
+Switched to a new branch 'dummy'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (dummy)
+$ git branch
+* dummy
+  feature/uppercase
+  master
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (dummy)
+$ git branch -d dummy
+error: Cannot delete branch 'dummy' checked out at 'C:/Users/Yashwanth Lal/Desktop/git-katas-master/ff-merge/exercise'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (dummy)
+$ git checkout master
+Switched to branch 'master'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git branch -d dummy
+Deleted branch dummy (was acf0721).
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git branch
+  feature/uppercase
+* master
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git switch feature/uppercase
+Switched to branch 'feature/uppercase'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ cat greeting.txt
+HELLO
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git log --oneline --graph --all
+* acf0721 (HEAD -> feature/uppercase, master) commited after changing into upper case
+* 21dbced Add content to greeting.txt
+* da729e3 Add file greeting.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (feature/uppercase)
+$ git checkout master
+Switched to branch 'master'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ cat greeting.txt
+HELLO
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git branch -d feature/uppercase
+Deleted branch feature/uppercase (was acf0721).
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ git branch
+* master
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$ cat greeting.txt
+HELLO
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/ff-merge/exercise (master)
+$

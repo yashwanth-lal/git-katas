@@ -1,0 +1,451 @@
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Yashwanth Lal/Desktop/git-katas-master/squashing/exercise/.git/
+[master (root-commit) dd3aa48] initial file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 alsoafile.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 9eaf934] Add relevant fact
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 90ddd4c] Add more relevancy
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 36246f5] most relevant!
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 867d659] add prime directive
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 41b6fb8] add the word!
+ 1 file changed, 1 insertion(+)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git log
+commit 41b6fb8b57994cd83c1b1205a309565194810dc9 (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 20:13:15 2022 +0530
+
+    add the word!
+
+commit 867d6598ae18fee114fe149444fd2f4df687d7b6
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 20:13:15 2022 +0530
+
+    add prime directive
+
+commit 36246f57251fe21a7cca74fafb51161c4210b7a7
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 20:13:14 2022 +0530
+
+    most relevant!
+
+commit 90ddd4c9097f6a150caee5a3a5cbc62f2e84a993
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 20:13:14 2022 +0530
+
+    Add more relevancy
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git rebase -i HEAD~5
+error: cannot 'squash' without a previous commit
+You can fix this with 'git rebase --edit-todo' and then run 'git rebase --continue'.
+Or you can abort the rebase with 'git rebase --abort'.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master|REBASE)
+$ git rebase --abort
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git rebase -i HEAD~4
+error: cannot 'squash' without a previous commit
+You can fix this with 'git rebase --edit-todo' and then run 'git rebase --continue'.
+Or you can abort the rebase with 'git rebase --abort'.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master|REBASE)
+$ git rebase -i HEAD~4
+fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+        git rebase (--continue | --abort | --skip)
+If that is not the case, please
+        rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master|REBASE)
+$ git rebase --abort
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git rebase -i HEAD~4
+error: cannot 'squash' without a previous commit
+You can fix this with 'git rebase --edit-todo' and then run 'git rebase --continue'.
+Or you can abort the rebase with 'git rebase --abort'.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master|REBASE)
+$ git rebase --edit-todo
+error: cannot 'squash' without a previous commit
+error: cannot 'squash' without a previous commit
+You can fix this with 'git rebase --edit-todo' and then run 'git rebase --continue'.
+Or you can abort the rebase with 'git rebase --abort'.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master|REBASE)
+$ git rebase --abort
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git rebase -i HEAD~5
+[detached HEAD dc13160] Add relevant fact
+ Date: Thu Mar 3 20:13:14 2022 +0530
+ 1 file changed, 5 insertions(+)
+ create mode 100644 file.txt
+Successfully rebased and updated refs/heads/master.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git log --oneline
+dc13160 (HEAD -> master) Add relevant fact
+dd3aa48 initial file
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ vi
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git rebase -i HEAD~2
+fatal: invalid upstream 'HEAD~2'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git reflog
+dc13160 (HEAD -> master) HEAD@{0}: rebase (finish): returning to refs/heads/master
+dc13160 (HEAD -> master) HEAD@{1}: rebase (squash): Add relevant fact
+6faaef3 HEAD@{2}: rebase (squash): # This is a combination of 4 commits.
+275dc3b HEAD@{3}: rebase (squash): # This is a combination of 3 commits.
+9b28f5f HEAD@{4}: rebase (squash): # This is a combination of 2 commits.
+9eaf934 HEAD@{5}: rebase (start): checkout HEAD~5
+41b6fb8 HEAD@{6}: rebase (abort): updating HEAD
+9eaf934 HEAD@{7}: rebase (start): checkout HEAD~4
+41b6fb8 HEAD@{8}: rebase (abort): updating HEAD
+9eaf934 HEAD@{9}: rebase (start): checkout HEAD~4
+41b6fb8 HEAD@{10}: rebase (abort): updating HEAD
+dd3aa48 HEAD@{11}: rebase (start): checkout HEAD~5
+41b6fb8 HEAD@{12}: commit: add the word!
+867d659 HEAD@{13}: commit: add prime directive
+36246f5 HEAD@{14}: commit: most relevant!
+90ddd4c HEAD@{15}: commit: Add more relevancy
+9eaf934 HEAD@{16}: commit: Add relevant fact
+dd3aa48 HEAD@{17}: commit (initial): initial file
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git log
+commit dc13160f14cd7f03c019f03c8314442b21ff2572 (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 20:13:14 2022 +0530
+
+    Add relevant fact
+
+commit dd3aa489cddf56c0b664fa54e5f22e78da767a3e
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 20:13:14 2022 +0530
+
+    initial file
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git commit  --ammend
+error: unknown option `ammend'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --signoff         add a Signed-off-by trailer
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git commit --ammend
+error: unknown option `ammend'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --signoff         add a Signed-off-by trailer
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git rebase -i
+There is no tracking information for the current branch.
+Please specify which branch you want to rebase against.
+See git-rebase(1) for details.
+
+    git rebase '<branch>'
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> master
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git rebase -i HEAD~1
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git add file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git commit --ammend
+error: unknown option `ammend'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --signoff         add a Signed-off-by trailer
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git rebase -i HEAD~2
+fatal: invalid upstream 'HEAD~2'
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git rebase -i HEAD~1
+error: cannot rebase: Your index contains uncommitted changes.
+error: Please commit or stash them.
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ vim
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ -vi
+bash: -vi: command not found
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ vi
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git branch
+* master
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git commit --amend
+[master 802951b] USING AMEND METHOD
+ Date: Thu Mar 3 20:13:14 2022 +0530
+ 1 file changed, 5 insertions(+)
+ create mode 100644 file.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$ git log
+commit 802951bb6f89ded8f39e258a4d697adc85fd934f (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 20:13:14 2022 +0530
+
+    USING AMEND METHOD
+
+    i squashed 5 files to one and commmited the new file using git commit
+    -amend so as to avoid by creating additional commit.
+
+commit dd3aa489cddf56c0b664fa54e5f22e78da767a3e
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 20:13:14 2022 +0530
+
+    initial file
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/squashing/exercise (master)
+$

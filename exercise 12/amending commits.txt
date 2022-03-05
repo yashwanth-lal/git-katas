@@ -1,0 +1,117 @@
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Yashwanth Lal/Desktop/git-katas-master/amend/exercise/.git/
+warning: LF will be replaced by CRLF in foo.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) 7b1a17b] feature 73
+ 1 file changed, 1 insertion(+)
+ create mode 100644 foo.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend/exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bar.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend/exercise (master)
+$ git show
+commit 7b1a17b7a656df8028451ad7e803b7b94b752e73 (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 19:23:30 2022 +0530
+
+    feature 73
+
+diff --git a/foo.txt b/foo.txt
+new file mode 100644
+index 0000000..257cc56
+--- /dev/null
++++ b/foo.txt
+@@ -0,0 +1 @@
++foo
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend/exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bar.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend/exercise (master)
+$ git add bar.txt
+warning: LF will be replaced by CRLF in bar.txt.
+The file will have its original line endings in your working directory
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend/exercise (master)
+$ git commit --amend
+[master 686bc4f] feature 73
+ Date: Thu Mar 3 19:23:30 2022 +0530
+ 2 files changed, 2 insertions(+)
+ create mode 100644 bar.txt
+ create mode 100644 foo.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend/exercise (master)
+$ git show
+commit 686bc4f82c45292d500ed2c46162f062e6f11e90 (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 19:23:30 2022 +0530
+
+    feature 73
+
+diff --git a/bar.txt b/bar.txt
+new file mode 100644
+index 0000000..5716ca5
+--- /dev/null
++++ b/bar.txt
+@@ -0,0 +1 @@
++bar
+diff --git a/foo.txt b/foo.txt
+new file mode 100644
+index 0000000..257cc56
+--- /dev/null
++++ b/foo.txt
+@@ -0,0 +1 @@
++foo
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend/exercise (master)
+$ git commit --amend
+[master 816dc0e] feature 73
+ Date: Thu Mar 3 19:23:30 2022 +0530
+ 2 files changed, 2 insertions(+)
+ create mode 100644 bar.txt
+ create mode 100644 foo.txt
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend/exercise (master)
+$ git show
+commit 816dc0e0e128c63f3316e56c9e2b667457209ef7 (HEAD -> master)
+Author: yashwanth lal <yashwanth.lal@zemosolabs.com>
+Date:   Thu Mar 3 19:23:30 2022 +0530
+
+    feature 73
+
+diff --git a/bar.txt b/bar.txt
+new file mode 100644
+index 0000000..5716ca5
+--- /dev/null
++++ b/bar.txt
+@@ -0,0 +1 @@
++bar
+diff --git a/foo.txt b/foo.txt
+new file mode 100644
+index 0000000..257cc56
+--- /dev/null
++++ b/foo.txt
+@@ -0,0 +1 @@
++foo
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend/exercise (master)
+$ git log --oneline --graph
+* 816dc0e (HEAD -> master) feature 73
+
+Yashwanth Lal@LAPTOP-FNOHR0ST MINGW64 ~/Desktop/git-katas-master/amend/exercise (master)
+$
